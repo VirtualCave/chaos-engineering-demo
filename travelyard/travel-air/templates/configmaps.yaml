@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: travel-air
+  namespace: {{ .Values.namespace }}
+data:
+  LISTEN_ADDR: 0.0.0.0:8080
+  MESSAGE: "Very complex airlines connections made easy!"
+  NAME: "travel-air"
+  SERVER_TYPE: "http"
+  TIMING_50_PERCENTILE: 30ms
+  TIMING_90_PERCENTILE: 60ms
+  TIMING_99_PERCENTILE: 90ms
+  TRACING_ZIPKIN: "http://tracing-jaeger:9411"

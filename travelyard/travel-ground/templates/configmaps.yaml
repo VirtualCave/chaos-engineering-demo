@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: travel-ground
+  namespace: {{ .Values.namespace }}
+data:
+  LISTEN_ADDR: 0.0.0.0:8080
+  UPSTREAM_URIS: "http://ground-bus:8080, http://ground-train:8080"
+  MESSAGE: "Ground travel aggregator working hard. Buses and trains are hard to connect ;)"
+  NAME: "travel-ground"
+  SERVER_TYPE: "http"
+  TIMING_50_PERCENTILE: 30ms
+  TIMING_90_PERCENTILE: 60ms
+  TIMING_99_PERCENTILE: 90ms
+  TRACING_ZIPKIN: "http://tracing-jaeger:9411"

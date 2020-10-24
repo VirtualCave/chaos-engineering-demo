@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "ground-bus.fullname" . }}-test-connection"
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "ground-bus.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "ground-bus.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

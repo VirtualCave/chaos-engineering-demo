@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "travel-sea.fullname" . }}-test-connection"
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "travel-sea.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "travel-sea.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
