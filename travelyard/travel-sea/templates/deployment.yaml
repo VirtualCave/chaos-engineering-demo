@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "travel-pack.fullname" . }}
+  name: {{ include "travel-sea.fullname" . }}
   namespace: {{ .Values.namespace }}
   labels:
-    {{- include "travel-pack.labels" . | nindent 4 }}
+    {{- include "travel-sea.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "travel-pack.selectorLabels" . | nindent 6 }}
+      {{- include "travel-sea.selectorLabels" . | nindent 6 }}
   template:
     metadata:
     {{- with .Values.podAnnotations }}
@@ -17,13 +17,13 @@ spec:
         {{- toYaml . | nindent 8 }}
     {{- end }}
       labels:
-        {{- include "travel-pack.selectorLabels" . | nindent 8 }}
+        {{- include "travel-sea.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "travel-pack.serviceAccountName" . }}
+      serviceAccountName: {{ include "travel-sea.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -48,4 +48,4 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           envFrom:
             - configMapRef:
-                name: travel-pack
+                name: travel-sea

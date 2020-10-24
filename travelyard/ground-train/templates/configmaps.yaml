@@ -2,13 +2,12 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: travel-pack
+  name: ground-train
   namespace: {{ .Values.namespace }}
 data:
   LISTEN_ADDR: 0.0.0.0:8080
-  UPSTREAM_URIS: "http://hotel-avail:8080, http://travel-avail:8080, http://awesome-cache:8080"
-  MESSAGE: "Here is your travel pack nicely wrapped. Enjoy!"
-  NAME: "travel-pack"
+  MESSAGE: "It's easier for all of us if you buy a rail pass :P"
+  NAME: "ground-train"
   SERVER_TYPE: "http"
   TIMING_50_PERCENTILE: 30ms
   TIMING_90_PERCENTILE: 60ms
