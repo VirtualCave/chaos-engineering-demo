@@ -1,0 +1,19 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: network-loss-example
+  namespace: chaos-testing
+spec:
+  action: loss
+  mode: all
+  selector:
+    namespaces:
+      - emojivoto
+    labelSelectors:
+      "app": "web-svc"
+  loss:
+    loss: "50"
+    correlation: "25"
+  duration: "120s"
+  scheduler:
+    cron: "@every 260s"
