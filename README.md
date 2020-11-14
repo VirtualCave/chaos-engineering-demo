@@ -63,12 +63,16 @@ Right now this repository have the labs listed below:
 You will only need to run the following commands:
 
 ``` bash
+$ # Create a new kubernetes cluster using kind.
+$ kind create cluster -name chaos
+
 $ # Install kind and chaos-mesh. The command below will install kind, create a cluster and deploy chaos-mesh into the cluster.
-$ curl -sSL https://mirrors.chaos-mesh.org/v1.0.1/install.sh | bash -s -- --local kind
+$ curl -sSL https://mirrors.chaos-mesh.org/v1.0.1/install.sh | bash -s -- --template --local kind | kubectl apply -f
 
 $ # Download linkerd binary.
-$ wget -O linkerd https://github.com/linkerd/linkerd2/releases/download/stable-2.9.0/linkerd2-cli-stable-2.9.0-linux-amd64
-$ chmod +x linkerd
+$ wget -O /tmp/linkerd https://github.com/linkerd/linkerd2/releases/download/stable-2.9.0/linkerd2-cli-stable-2.9.0-linux-amd64
+$ chmod +x /tmp/linkerd
+$ sudo mv /tmp/linkerd /usr/local/bin
 
 $ # Check and install linkerd into the k8s cluster.
 $ linkerd check --pre
@@ -87,6 +91,17 @@ $ # Install linkerd.
 $ kubectl apply -f linkerd/linkerd-install.yaml
 ```
 
+## Installing Emojivoto demo app
+
+``` bash
+$ kubectl apply -f linkerd/emojivoto.yaml
+```
+
+## Inject linkerd sidecars into emojivoto deployments
+
+``` bash
+$ kubectl get -n emojivoto deploy | linkerd inject - | kubectl apply -f -
+```
 
 # Acknowledgements, mentions and thanks
 
