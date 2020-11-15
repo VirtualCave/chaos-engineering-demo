@@ -46,15 +46,13 @@ Below there is a list of some documentation that may help during these labs.
 
 All the software above is used either to set up the lab or to practice with its configuration.
 
-# Labs folder structure
+# Folder structure
 
-You'll find some labs in this repository. Each lab has the following file/directory structure:
+You'll find following files and directory structure:
 
-* _README.md_: to explain the lab and its contents and details.
-* _Configuration folders_: you may find some folders which contain configuration files for each tool used in the laboratory. For example an _envoy_ or _consul_ folder with some configuration files that you should use in the lab to run them.
-
-Right now this repository have the labs listed below:
-
+* _README.md_: It's this file. Congrats!
+* _linkerd folder_: It contains some _[kubernetes](https://kubernetes.io)_ manifests to install _[linkerd](https://linkerd.io)_ and the testing webapp called _emojivoto_.
+* _chaos-mesh folder_: You'll find _[chaos mesh](https://chaos-mesh.org)_ installation manifests for _[kind](http://kind.sigs.k8s.io)_ and a folder with some chaos experiments used for this demo.
 
 # Set the lab
 
