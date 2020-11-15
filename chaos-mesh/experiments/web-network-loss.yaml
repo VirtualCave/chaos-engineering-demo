@@ -14,6 +14,6 @@ spec:
   loss:
     loss: "50"
     correlation: "25"
-  duration: "120s"
+  duration: "60s"
   scheduler:
-    cron: "@every 260s"
+    cron: "@every 120s"

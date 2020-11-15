@@ -52,7 +52,8 @@ You'll find following files and directory structure:
 
 * _README.md_: It's this file. Congrats!
 * _linkerd folder_: It contains some _[kubernetes](https://kubernetes.io)_ manifests to install _[linkerd](https://linkerd.io)_ and the testing webapp called _emojivoto_.
-* _chaos-mesh folder_: You'll find _[chaos mesh](https://chaos-mesh.org)_ installation manifests for _[kind](http://kind.sigs.k8s.io)_ and a folder with some chaos experiments used for this demo.
+* _chaos-mesh folder_: You'll find _[chaos mesh](https://chaos-mesh.org)_ installation manifests for _[kind](http://kind.sigs.k8s.io)_.
+* _chaos-mesh/experiments folder_: There are some chaos experiments used for this demo and some explanations about them.
 
 # Set the lab
 
