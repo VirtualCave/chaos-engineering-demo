@@ -28,9 +28,14 @@ The content of this repository is not intended to tell how you should do your jo
 The lab environment is created using _[Kind](https://kind.sigs.k8s.io/)_, but you may use any other _Kubernetes_ cluster if you have one already available for you.
 Also, even it's not mandatory, if you already have some knowledge about _[Kubernetes](https://kubernetes.io/)_ it may help.
 
+## Knowledge
+
+* _[Kubernetes](https://kubernetes.io)_: we'll use a _[Kubernetes](https://kubernetes.io)_ cluster to deploy all the needed software for this demo. A little understanding on what _k8s_ is will help.
+
 ## Tools
 
 * _Linux OS:_ Actually we are using _[Debian](https://www.debian.org/)_, but any linux distro will do the job.
+* _[kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)_: you will use it to install all the software needed for this demo.
 * _[Kind](https://kind.sigs.k8s.io):_ Used to create a local _[Kubernetes](https://kubernetes.io/)_ cluster.
 * _[Linkerd](https://linkerd.io/):_ this is a very lightweight, fast and reliable service mesh tool by _[Buoyant, Inc](https://buoyant.io)_.
 * _[Chaos Mesh](https://chaos-mesh.org/):_ an awesome chaos engineering tool for kubernetes from the _[CNCF Sandbox](https://landscape.cncf.io/selected=chaos-mesh)_.
