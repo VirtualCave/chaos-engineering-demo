@@ -1,0 +1,20 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: voting-network-delay-example
+  namespace: chaos-testing
+spec:
+  action: delay
+  mode: all
+  selector:
+    namespaces:
+      - emojivoto
+    labelSelectors:
+      "app": "voting-svc"
+  delay:
+    latency: "30s"
+    correlation: "100"
+    jitter: "0ms"
+  duration: "60s"
+  scheduler:
+    cron: "@every 120s"
