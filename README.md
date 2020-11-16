@@ -104,7 +104,7 @@ $ kubectl apply -f linkerd/emojivoto.yaml
 ## Inject linkerd sidecars into emojivoto deployments
 
 ``` bash
-$ kubectl get -n emojivoto deploy | linkerd inject - | kubectl apply -f -
+$ kubectl get deployment -oyaml -n emojivoto | linkerd inject - | kubectl apply -f -
 ```
 
 # Acknowledgements, mentions and thanks
